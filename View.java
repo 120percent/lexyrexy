@@ -1,33 +1,62 @@
+import javax.swing.*;
+import java.awt.*;
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
+import java.awt.image.BufferedImage;
 
-/**
- * Beschreiben Sie hier die Klasse View.
- * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
- */
-public class View
+public class View extends javax.swing.JComponent implements ModelListener
 {
-    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
-    private int x;
+    // drawImage:
+    // https://stackoverflow.com/questions/17865465/how-do-i-draw-an-image-to-a-jpanel-or-jframe
 
-    /**
-     * Konstruktor für Objekte der Klasse View
-     */
-    public View()
-    {
-        // Instanzvariable initialisieren
-        x = 0;
+    private Model model;
+    private JFrame frame;
+    private BufferedImage background, trex, trexjump = null;
+
+    public View(Model m){
+        model = m;
+        model.addListener(this);
+        loadImages();
+        frame = buildFrame();
     }
 
-    /**
-     * Ein Beispiel einer Methode - ersetzen Sie diesen Kommentar mit Ihrem eigenen
-     * 
-     * @param  y    ein Beispielparameter für eine Methode
-     * @return        die Summe aus x und y
-     */
-    public int beispielMethode(int y)
-    {
-        // tragen Sie hier den Code ein
-        return x + y;
+    private JFrame buildFrame() {
+        frame = new JFrame();
+        frame.add(this);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setSize(800, 800);
+        frame.setResizable(false);
+        frame.setFocusable(true);
+        frame.setVisible(true);
+        return frame;
+    }
+
+    public void modelChanged(){
+        repaint();
+    }
+
+    public void loadImages(){
+        try {
+            background = ImageIO.read(new File("../LexyRexy/graphics/background.png"));
+            trex = ImageIO.read(new File("../LexyRexy/graphics/dino.png"));
+            trexjump = ImageIO.read(new File("../LexyRexy/graphics/dinoSpringen.png"));
+        } catch (IOException e) {}
+    }
+
+    public void paint(Graphics g){
+        // ZU PAINTENDE OBJEKTE
+        // --> TREX, OBSTACLES, (BACKGROUND)
+        g.setColor(Color.BLACK);
+        Dimension size = getSize();
+        g.fillRect(0,0,size.width,size.height);
+
+        // BACKGROUND IMAGE
+        g.drawImage(background, 0, 0,getWidth(), getHeight(), null);
+        if(model.getTrexState() == 0){
+            g.drawImage(trex, 250, model.getTrexY(),150, 150, null);
+        }else if (model.getTrexState() == 1){
+            g.drawImage(trexjump, 250, model.getTrexY(),150, 150, null);
+        }
     }
 }

@@ -1,33 +1,33 @@
 
 /**
- * Beschreiben Sie hier die Klasse Obstacles.
+ * Write a description of class Obstacles here.
  * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
+ * @author (your name) 
+ * @version (a version number or a date)
  */
 public class Obstacles
 {
-    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
+    // instance variables - replace the example below with your own
     private int x;
 
     /**
-     * Konstruktor für Objekte der Klasse Obstacles
+     * Constructor for objects of class Obstacles
      */
     public Obstacles()
     {
-        // Instanzvariable initialisieren
+        // initialise instance variables
         x = 0;
     }
 
     /**
-     * Ein Beispiel einer Methode - ersetzen Sie diesen Kommentar mit Ihrem eigenen
+     * An example of a method - replace this comment with your own
      * 
-     * @param  y    ein Beispielparameter für eine Methode
-     * @return        die Summe aus x und y
+     * @param  y   a sample parameter for a method
+     * @return     the sum of x and y 
      */
-    public int beispielMethode(int y)
+    public int sampleMethod(int y)
     {
-        // tragen Sie hier den Code ein
+        // put your code here
         return x + y;
     }
 }

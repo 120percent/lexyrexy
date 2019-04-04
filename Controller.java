@@ -1,22 +1,24 @@
-import java.io.*;
-import javax.imageio.*;
-import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
-import java.awt.image.BufferedImage;
+import java.lang.Thread;
 
-public class Controller implements KeyListener, Runnable{
-
-    private Thread gp;
+public class Controller implements KeyListener, Runnable
+{
+    private Model model;
+    private View view;
+     private Thread gp;
     private boolean running = false;
     private boolean gameOver = false;
     private int score;
 
     public Controller(){
-
+        model = new Model();
+        view = new View(model);
+        view.addKeyListener(this);
+        model.addListener(view);
+        //startGame();
     }
 
-    public void startGame(){
+   public void startGame(){
 
     }
 
@@ -68,4 +70,5 @@ public class Controller implements KeyListener, Runnable{
     public void keyReleased(KeyEvent e) {
         // System.out.println("keyReleased: "+e);
     }
+
 }

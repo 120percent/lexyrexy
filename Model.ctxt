@@ -1,3 +1,22 @@
 #BlueJ class context
-comment0.target=Model
-numComments=1
+comment0.params=
+comment0.target=Model()
+comment1.params=ml
+comment1.target=void\ addListener(ModelListener)
+comment2.params=ml
+comment2.target=void\ remListener(ModelListener)
+comment3.params=
+comment3.target=void\ informListeners()
+comment4.params=y
+comment4.target=void\ update(int)
+comment5.params=
+comment5.target=void\ render()
+comment6.params=
+comment6.target=int\ getTrexState()
+comment7.params=s
+comment7.target=void\ setTrexState(int)
+comment8.params=
+comment8.target=int\ getTrexY()
+comment9.params=
+comment9.target=void\ jump()
+numComments=10

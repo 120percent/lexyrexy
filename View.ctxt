@@ -1,10 +1,12 @@
 #BlueJ class context
-comment0.target=View
-comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ View.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
+comment0.params=m
+comment0.target=View(Model)
 comment1.params=
-comment1.target=View()
-comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ View\r\n
-comment2.params=y
-comment2.target=int\ beispielMethode(int)
-comment2.text=\r\n\ Ein\ Beispiel\ einer\ Methode\ -\ ersetzen\ Sie\ diesen\ Kommentar\ mit\ Ihrem\ eigenen\r\n\ \r\n\ @param\ \ y\ \ \ \ ein\ Beispielparameter\ f\u00FCr\ eine\ Methode\r\n\ @return\ \ \ \ \ \ \ \ die\ Summe\ aus\ x\ und\ y\r\n
-numComments=3
+comment1.target=javax.swing.JFrame\ buildFrame()
+comment2.params=
+comment2.target=void\ modelChanged()
+comment3.params=
+comment3.target=void\ loadImages()
+comment4.params=g
+comment4.target=void\ paint(java.awt.Graphics)
+numComments=5

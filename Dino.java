@@ -6,7 +6,7 @@ public class Dino{
     private int x;
     private int y;
 
-    Rectangle getDimension() {
+    public Rectangle getDimension() {
       Rectangle dinorect = new Rectangle();
       dinorect.x = x;
       dinorect.y = y;
@@ -16,15 +16,16 @@ public class Dino{
       return dinorect;
     }
     
-    BufferedImage getImage(){
+    public BufferedImage getImage(){
         return image;
     }
     
-    void setImage(BufferedImage i){
+    public void setImage(BufferedImage i){
         image = i;
     }
     
-    void setY(int sy){
+    public void setY(int sy){
        x = sy; 
     }
+    
 }
