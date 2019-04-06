@@ -25,7 +25,7 @@ public class Dino{
         state = RUN;
         running = LEFT_FOOT;
         topReached = false;
-        jumpFactor = 40;
+        jumpFactor = 50;
         top = 300;
         bottom = 520;
         image = ResourceManager.getImage("dino_leftfoot.png");
@@ -35,8 +35,8 @@ public class Dino{
         Rectangle dinorect = new Rectangle();
         dinorect.x = x;
         dinorect.y = y;
-        dinorect.width = 200;
-        dinorect.height = 200;
+        dinorect.width = 140;
+        dinorect.height = 140;
 
         return dinorect;
     }
@@ -63,6 +63,7 @@ public class Dino{
 
     public void reset(){
         state = RUN;
+        y = bottom;
     }
 
     public void update(){
@@ -81,9 +82,9 @@ public class Dino{
                 changeY(-jumpFactor);
             }else if(y <= top){
                 topReached = true;
-                changeY(jumpFactor);
+                changeY(jumpFactor-10);
             }else if(topReached && !(y >= bottom) ){
-                changeY(jumpFactor);
+                changeY(jumpFactor-10);
             }else if(y >= bottom){
                 topReached = false;
                 state = RUN;
