@@ -3,9 +3,14 @@ public class Model
 {
     private ArrayList<ModelListener> listeners;
     private Dino dino;
-    private Obstacles Obstacle;
+    private Obstacles obstacles;
+    private Background background;
+    
     public Model(){
         listeners = new ArrayList<ModelListener>();
+        dino = new Dino();
+        obstacles = new Obstacles();
+        background = new Background();
         //trexY = 550; //400jump
     }
 
@@ -24,14 +29,48 @@ public class Model
     }
 
     public void update(){
-        
+        System.out.println("update");
+        getBackground().update();
+        getDino().update();
+        getObstacles().update();
     }
     
     public void render(){
+        System.out.println("render");
         informListeners();    
     }
     
-    public void jump(){
-        dino.jump();    
+    public Dino getDino(){
+        return dino;
+    }
+    
+    public Background getBackground(){
+        return background;
+    }
+    
+    public Obstacles getObstacles(){
+        return obstacles;
+    }
+    
+    public void reset(){
+        getBackground().reset();
+        getDino().reset();
+        getObstacles().reset();
+        
+    }
+    
+    public boolean checkCollision(){
+        System.out.println("check");
+        Boolean collision = false;
+        for(Obstacle o : getObstacles().getObstacles()){
+            collision = o.getDimension().intersects(getDino().getDimension());
+        }
+        return collision;
+    }
+    
+    public void stop(){
+        getBackground().stop();
+        getDino().die();
+        getObstacles().stop();
     }
 }

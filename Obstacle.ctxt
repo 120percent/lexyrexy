@@ -1,12 +1,13 @@
 #BlueJ class context
-comment0.params=
-comment0.target=java.awt.Rectangle\ getDimension()
+comment0.target=Obstacle
 comment1.params=
-comment1.target=java.awt.image.BufferedImage\ getImage()
-comment2.params=i
-comment2.target=void\ setImage(java.awt.image.BufferedImage)
-comment3.params=sx
-comment3.target=void\ setX(int)
-comment4.params=sy
-comment4.target=void\ setY(int)
-numComments=5
+comment1.target=Obstacle()
+comment2.params=
+comment2.target=java.awt.Rectangle\ getDimension()
+comment3.params=i
+comment3.target=void\ setImage(java.lang.String)
+comment4.params=deltax
+comment4.target=void\ chageX(int)
+comment5.params=g
+comment5.target=void\ create(java.awt.Graphics)
+numComments=6

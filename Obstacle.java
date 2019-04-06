@@ -1,11 +1,18 @@
 import java.awt.image.BufferedImage;
 import java.awt.Rectangle;
+import java.awt.*;
 
 public class Obstacle{
     private BufferedImage image;
     private int x;
     private int y;
 
+    public Obstacle(){
+        x = 1000;
+        y = 450;
+        image = ResourceManager.getImage("obstacle_gros.png");
+    }
+    
     Rectangle getDimension() {
       Rectangle obstaclerect = new Rectangle();
       obstaclerect.x = x;
@@ -16,21 +23,16 @@ public class Obstacle{
       return obstaclerect;
     }
     
-    BufferedImage getImage(){
-        return image;
+    void setImage(String i){
+        image = ResourceManager.getImage(i);
     }
     
-    void setImage(BufferedImage i){
-        image = i;
+    void chageX(int deltax){
+       x = x + deltax; 
     }
     
-    void setX(int sx){
-       x = sx; 
+    public void create(Graphics g){
+        g.drawImage(image, x, y,100, 100, null);
     }
-    
-    void setY(int sy){
-       x = sy; 
-    }
-    
     
 }

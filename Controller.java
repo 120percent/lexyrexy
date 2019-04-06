@@ -5,8 +5,7 @@ public class Controller implements KeyListener, Runnable
 {
     private Model model;
     private View view;
-     private Thread gp;
-    private boolean running = false;
+    private Thread gp;
     private boolean gameOver = false;
     private int score;
 
@@ -15,25 +14,23 @@ public class Controller implements KeyListener, Runnable
         view = new View(model);
         view.addKeyListener(this);
         model.addListener(view);
-        //startGame();
+        startGame();
     }
 
-   public void startGame(){
-
-    }
-
-    public void stopGame(){
-
+    public void startGame(){
+        gp = new Thread(this);
+        gp.start();
     }
 
     public void run() {
-        running = true;
-
-        while(running) {
-            updateGame();
+        
+        while(!gameOver) {
+            model.update();
+            //gameOver = model.checkCollision();
+            gameOver = false;
             model.render();      
             try {
-                Thread.sleep(20);
+                Thread.sleep(80);
             } catch(InterruptedException e) {
                 e.printStackTrace();
             }
@@ -41,24 +38,12 @@ public class Controller implements KeyListener, Runnable
 
     }
 
-    public void updateGame() {
-        score += 1;
-        model.update();
-        boolean collision = model.hasCollided();
-        if(collision){}else{}
-    }
-
     public void keyTyped(KeyEvent e) {
-        // System.out.println(e);
-        if(e.getKeyChar() == ' ') {    
-            if(gameOver) reset();
-            if (gp == null || !running) {
-                System.out.println("Game starts");        
-                gp = new Thread(this);
-                gp.start();     
-                model.startRunning();   
+        if(e.getKeyChar() == ' ') {
+            if (gameOver) {
+                model.reset();
             } else {
-                model.jump();
+                model.getDino().jump();
             }
         }
     }

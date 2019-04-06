@@ -1,33 +1,43 @@
+import java.util.ArrayList;
+import java.awt.*;
 
-/**
- * Write a description of class Obstacles here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Obstacles
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Obstacles
-     */
-    public Obstacles()
-    {
-        // initialise instance variables
-        x = 0;
+    private ArrayList<Obstacle> obstacles;
+    private int state;
+    public static final int STILL = 1, RUN = 2;
+    
+    public Obstacles(){
+        obstacles = new ArrayList<Obstacle>();
+        state = RUN;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    public void create(Graphics g){
+        for (Obstacle o : obstacles){
+            o.create(g);
+        }
+    }
+    
+    public void reset(){
+        initializeObstacles();
+        state = RUN;
+    }
+    
+    public void update(){
+        if(state == RUN){
+            
+        }
+    }
+    
+    public ArrayList<Obstacle> getObstacles(){
+        return obstacles;
+    }
+    
+    public void stop(){
+        state = STILL;
+    }
+    
+    public void initializeObstacles(){
+        
     }
 }
