@@ -24,11 +24,18 @@ public class Controller implements KeyListener, Runnable
 
     public void run() {
         
-        while(!gameOver) {
+        while(true) {
             model.update();
-            //gameOver = model.checkCollision();
-            gameOver = false;
-            model.render();      
+            gameOver = model.checkCollision();
+            if(gameOver){
+                model.stop();
+                model.getBackground().setImage("background_start.png");
+                score = 0;
+            }else{
+                score++; 
+                model.getObstacles().changeSpeed(score);
+            }
+            model.render();
             try {
                 Thread.sleep(80);
             } catch(InterruptedException e) {
@@ -41,6 +48,7 @@ public class Controller implements KeyListener, Runnable
     public void keyTyped(KeyEvent e) {
         if(e.getKeyChar() == ' ') {
             if (gameOver) {
+                gameOver = false;
                 model.reset();
             } else {
                 model.getDino().jump();

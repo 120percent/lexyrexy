@@ -9,26 +9,30 @@ public class Obstacle{
 
     public Obstacle(){
         x = 1000;
-        y = 450;
+        y = 600;
         image = ResourceManager.getImage("obstacle_gros.png");
     }
     
-    Rectangle getDimension() {
+    public Rectangle getDimension() {
       Rectangle obstaclerect = new Rectangle();
       obstaclerect.x = x;
       obstaclerect.y = y;
-      obstaclerect.width = 100;
-      obstaclerect.height = 100;
+      obstaclerect.width = 75;
+      obstaclerect.height = 75;
 
       return obstaclerect;
     }
     
-    void setImage(String i){
+    public void setImage(String i){
         image = ResourceManager.getImage(i);
     }
     
-    void chageX(int deltax){
+    public void changeX(int deltax){
        x = x + deltax; 
+    }
+    
+    public int getX(){
+        return x;
     }
     
     public void create(Graphics g){
