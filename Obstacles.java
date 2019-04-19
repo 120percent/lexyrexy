@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.awt.*;
+import java.util.Random;
 
 public class Obstacles
 {
@@ -7,12 +8,15 @@ public class Obstacles
     private int state;
     private static final int STILL = 1, RUN = 2;
     private int speed;
+    private Random random;
 
     public Obstacles(){
         obstacles = new ArrayList<Obstacle>();
         speed = 30;
         state = RUN;
+        random = new Random();
         initializeObstacles();
+        
     }
 
     public void create(Graphics g){
@@ -35,6 +39,7 @@ public class Obstacles
             if(obstacles.size() != 0){
                 for(Obstacle o : obstacles){
                     o.changeX(-speed);
+                    o.animation();
                     if(o.getX() < 0){
                         obstacles.remove(o);
                         initializeObstacles();
@@ -59,14 +64,20 @@ public class Obstacles
     }
 
     public void initializeObstacles(){
-        obstacles.add(new Obstacle());
+        if(random.nextInt(2) == 1){
+            if(random.nextInt(2) == 1){
+                obstacles.add(new Bird());
+            }else{
+                obstacles.add(new Cactus());
+            }
+        }
     }
 
     public void changeSpeed(int s){
         if (speed >70){
             speed = 71;
         }else{
-           speed = s/3 +30; 
+            speed = s/3 +30; 
         }
     }
 }

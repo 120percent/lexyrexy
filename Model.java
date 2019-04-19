@@ -73,4 +73,6 @@ public class Model
         getDino().die();
         getObstacles().stop();
     }
+    
+    public int getScore(){return 0;}
 }
