@@ -6,15 +6,18 @@ public class Dino{
     private BufferedImage image;
     private int x;
     private int y;
+    private int high;
     private int state;
+    private int cowerTick;
     private int running;
     private boolean topReached;
     private int jumpFactor;
     private int top, bottom;
 
-    public int STILL = 1,
+    private int STILL = 1,
     RUN = 2,
-    JUMP = 3;
+    JUMP = 3,
+    COWER = 4;
 
     private int LEFT_FOOT = 1,
     RIGHT_FOOT = 2;
@@ -22,6 +25,7 @@ public class Dino{
     public Dino(){
         x = 200;
         y = 520;
+        high = 140;
         state = RUN;
         running = LEFT_FOOT;
         topReached = false;
@@ -33,10 +37,10 @@ public class Dino{
 
     public Rectangle getDimension() {
         Rectangle dinorect = new Rectangle();
-        dinorect.x = x;
+        dinorect.x = x+(140-high); //hitbox ducken
         dinorect.y = y;
         dinorect.width = 140;
-        dinorect.height = 140;
+        dinorect.height = high;
 
         return dinorect;
     }
@@ -57,6 +61,10 @@ public class Dino{
         state = JUMP;
     }
 
+    public void cower(){
+        state = COWER;
+    }
+
     public void die(){
         state = STILL;
     }
@@ -64,6 +72,7 @@ public class Dino{
     public void reset(){
         state = RUN;
         y = bottom;
+        cowerTick = 0;
     }
 
     public void update(){
@@ -94,6 +103,18 @@ public class Dino{
         }
         if(state == STILL){
             setImage("dino_dead.png");
+        }
+        if(state == COWER){
+            setImage("dinoDucken.png");
+            high = 100;
+            cowerTick++;
+            if(cowerTick > 9){
+                state = RUN;
+                running = LEFT_FOOT;
+                setImage("dino_leftfoot");;
+                high = 140;
+                cowerTick = 0;
+            }
         }
 
     }

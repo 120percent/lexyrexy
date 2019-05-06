@@ -8,7 +8,7 @@ public class ResourceManager
     public static BufferedImage getImage(String i){
         BufferedImage image = null;
         try {
-            image = ImageIO.read(new File("C:\\Users\\Simon\\Desktop\\lexyrexy-master\\graphics\\"+i));
+            image = ImageIO.read(new File("graphics/"+i));
         } catch (IOException e) {}
         return image;
     }

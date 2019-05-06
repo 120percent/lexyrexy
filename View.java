@@ -13,13 +13,14 @@ public class View extends JComponent implements ModelListener
 
     private Model model;
     private JFrame frame;
-    private BufferedImage background, trex, trexjump = null;
+    JLabel scoreLabel;
 
     public View(Model m){
         model = m;
         model.addListener(this);
         frame = buildFrame();
         setFocusable(true);
+        scoreLabel = new JLabel("Score");
     }
 
     private JFrame buildFrame() {
@@ -42,5 +43,7 @@ public class View extends JComponent implements ModelListener
         model.getBackground().create(g);
         model.getDino().create(g);
         model.getObstacles().create(g);
+        
+        scoreLabel.setText("Score" + model.getScore());
     }
 }

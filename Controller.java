@@ -6,7 +6,7 @@ public class Controller implements KeyListener, Runnable
     private Model model;
     private View view;
     private Thread gp;
-    private boolean gameOver = false;
+    private boolean gameOver = true;
     private int score;
 
     public Controller(){
@@ -23,7 +23,7 @@ public class Controller implements KeyListener, Runnable
     }
 
     public void run() {
-        
+
         while(true) {
             model.update();
             gameOver = model.checkCollision();
@@ -47,11 +47,19 @@ public class Controller implements KeyListener, Runnable
 
     public void keyTyped(KeyEvent e) {
         if(e.getKeyChar() == ' ') {
+            if(!gameOver){
+                model.getDino().jump();
+            }
+        }
+        if(e.getKeyChar() == '0'){
+            if(!gameOver){
+                model.getDino().cower();
+            }
+        }
+        if(e.getKeyChar() == '\n'){
             if (gameOver) {
                 gameOver = false;
                 model.reset();
-            } else {
-                model.getDino().jump();
             }
         }
     }
