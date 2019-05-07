@@ -37,9 +37,13 @@ public class Obstacles
     public void update(){
         if(state == RUN){
             if(obstacles.size() != 0){
+                ArrayList<Obstacle> removeObstacles = new ArrayList<Obstacle>();
                 for(Obstacle o : obstacles){
                     o.changeX(-speed);
                     o.animation();
+                    removeObstacles.add(o);
+                }
+                for(Obstacle o : removeObstacles){
                     if(o.getX() < 0){
                         obstacles.remove(o);
                         initializeObstacles();

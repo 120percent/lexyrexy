@@ -1,17 +1,12 @@
+import java.awt.Rectangle;
 
-/**
- * Beschreiben Sie hier die Klasse Bird.
- * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
- */
 public class Bird extends Obstacle
 {
     private int state;
     public Bird()
     {
         x = 1000;
-        y = 450;
+        y = 500;
         image = ResourceManager.getImage("vogel1.png");
         state = 1;
     }
@@ -28,5 +23,15 @@ public class Bird extends Obstacle
             System.out.println("Fehler Vogel Animation");
         }
 
+    }
+    
+    public Rectangle getDimension() {
+        Rectangle obstaclerect = new Rectangle();
+        obstaclerect.x = x;
+        obstaclerect.y = y;
+        obstaclerect.width = 50;
+        obstaclerect.height = 30;
+
+        return obstaclerect;
     }
 }

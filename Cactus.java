@@ -1,10 +1,5 @@
+import java.awt.Rectangle;
 
-/**
- * Beschreiben Sie hier die Klasse Cactus.
- * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
- */
 public class Cactus extends Obstacle
 { 
     public Cactus(){
@@ -13,4 +8,13 @@ public class Cactus extends Obstacle
         image = ResourceManager.getImage("obstacle_gros.png");
     }
     
+    public Rectangle getDimension() {
+        Rectangle obstaclerect = new Rectangle();
+        obstaclerect.x = x;
+        obstaclerect.y = y;
+        obstaclerect.width = 75;
+        obstaclerect.height = 75;
+
+        return obstaclerect;
+    }
 }

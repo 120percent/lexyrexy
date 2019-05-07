@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.target=Cactus
-comment0.text=\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Cactus.\n\ \n\ @author\ (Ihr\ Name)\ \n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\n
 comment1.params=
 comment1.target=Cactus()
-numComments=2
+comment2.params=
+comment2.target=java.awt.Rectangle\ getDimension()
+numComments=3
