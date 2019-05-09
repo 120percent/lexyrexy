@@ -6,24 +6,20 @@ public class Controller implements KeyListener, Runnable
     private Model model;
     private View view;
     private Thread gp;
-    private boolean gameOver = false;
+    private boolean gameOver = true;
     private int score;
-    public boolean gamestarted;
 
     public Controller(){
         model = new Model();
         view = new View(model);
         view.addKeyListener(this);
         model.addListener(view);
-        //startGame();
+        startGame();
     }
 
     public void startGame(){
-        if(!gamestarted){
-            gp = new Thread(this);
-            gp.start();
-            gamestarted = true;
-        }
+        gp = new Thread(this);
+        gp.start();
     }
 
     public void run() {
@@ -50,28 +46,26 @@ public class Controller implements KeyListener, Runnable
     }
 
     public void keyTyped(KeyEvent e) {
-        
-    }
-
-    public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_UP) {
+        if(e.getKeyChar() == ' ') {
             if(!gameOver){
                 model.getDino().jump();
             }
         }
-        if(e.getKeyCode() == KeyEvent.VK_DOWN){
+        if(e.getKeyChar() == '0'){
             if(!gameOver){
                 model.getDino().cower();
             }
         }
-        if(e.getKeyCode() == KeyEvent.VK_ENTER){
+        if(e.getKeyChar() == '\n'){
             if (gameOver) {
                 gameOver = false;
                 model.reset();
-            }else if(!gamestarted){
-                startGame();
             }
         }
+    }
+
+    public void keyPressed(KeyEvent e) {
+        // System.out.println("keyPressed: "+e);
     }
 
     public void keyReleased(KeyEvent e) {

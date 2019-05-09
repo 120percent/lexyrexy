@@ -5,12 +5,14 @@ public class Model
     private Dino dino;
     private Obstacles obstacles;
     private Background background;
+    private Score score;
     
     public Model(){
         listeners = new ArrayList<ModelListener>();
         dino = new Dino();
         obstacles = new Obstacles();
         background = new Background();
+        score = new Score();
         //trexY = 550; //400jump
     }
 
@@ -33,6 +35,7 @@ public class Model
         getBackground().update();
         getDino().update();
         getObstacles().update();
+        getScore().update();
     }
     
     public void render(){
@@ -52,11 +55,15 @@ public class Model
         return obstacles;
     }
     
+    public Score getScore(){
+        return score;
+    }
+    
     public void reset(){
         getBackground().reset();
         getDino().reset();
         getObstacles().reset();
-        
+        getScore().reset();
     }
     
     public boolean checkCollision(){
@@ -72,7 +79,8 @@ public class Model
         getBackground().stop();
         getDino().die();
         getObstacles().stop();
+        getScore().stop();
     }
     
-    public int getScore(){return 0;}
+    
 }
