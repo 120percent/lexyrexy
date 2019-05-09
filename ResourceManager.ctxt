@@ -1,5 +1,4 @@
 #BlueJ class context
-comment0.target=ResourceManager
-comment1.params=i
-comment1.target=java.awt.image.BufferedImage\ getImage(java.lang.String)
-numComments=2
+comment0.params=i
+comment0.target=java.awt.image.BufferedImage\ getImage(java.lang.String)
+numComments=1

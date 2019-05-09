@@ -1,11 +1,10 @@
 #BlueJ class context
-comment0.target=View
-comment1.params=m
-comment1.target=View(Model)
+comment0.params=m
+comment0.target=View(Model)
+comment1.params=
+comment1.target=javax.swing.JFrame\ buildFrame()
 comment2.params=
-comment2.target=javax.swing.JFrame\ buildFrame()
-comment3.params=
-comment3.target=void\ modelChanged()
-comment4.params=g
-comment4.target=void\ paint(java.awt.Graphics)
-numComments=5
+comment2.target=void\ modelChanged()
+comment3.params=g
+comment3.target=void\ paint(java.awt.Graphics)
+numComments=4
