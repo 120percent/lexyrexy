@@ -28,6 +28,7 @@ public class Score
 
     public void update(){
         if(run){
+
             score++;
             digitInts.set(0, (digitInts.get(0)+1));
             for(int i = 0; i < 4; i++){
@@ -38,6 +39,7 @@ public class Score
                 number.set(i, ResourceManager.getImage("ziffer"+ digitInts.get(i)+".png"));
             }
         }
+        System.out.println(run+"");
     }
 
     public int getScore(){
@@ -45,14 +47,12 @@ public class Score
     }
 
     public void reset(){
-
         for(int i = 0; i < 4; i++){
-            number.add(ResourceManager.getImage("ziffer0.png"));
+            number.set(i, ResourceManager.getImage("ziffer0.png"));
         }
         for(int i = 0; i < 4; i++){
-            digitInts.add(0);
+            digitInts.set(i, 0);
         }
-
         score = 0;
         run = true;
     }
@@ -64,7 +64,8 @@ public class Score
     }
 
     public void stop(){
-        //run = false;
+        run = false;
+
         
     }
 }

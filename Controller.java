@@ -33,7 +33,7 @@ public class Controller implements KeyListener, Runnable
                 score = 0;
             }else{
                 score++; 
-                model.getObstacles().changeSpeed(score);
+                model.getObstacles().changeSpeed(model.getScore().getScore());
             }
             model.render();
             try {
