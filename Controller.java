@@ -6,20 +6,24 @@ public class Controller implements KeyListener, Runnable
     private Model model;
     private View view;
     private Thread gp;
-    private boolean gameOver = true;
+    private boolean gameOver = false;
     private int score;
+    public boolean gamestarted;
 
     public Controller(){
         model = new Model();
         view = new View(model);
         view.addKeyListener(this);
         model.addListener(view);
-        startGame();
+        //startGame();
     }
 
     public void startGame(){
-        gp = new Thread(this);
-        gp.start();
+        if(!gamestarted){
+            gp = new Thread(this);
+            gp.start();
+            gamestarted = true;
+        }
     }
 
     public void run() {
@@ -33,7 +37,7 @@ public class Controller implements KeyListener, Runnable
                 score = 0;
             }else{
                 score++; 
-                model.getObstacles().changeSpeed(model.getScore().getScore());
+                model.getObstacles().changeSpeed(score);
             }
             model.render();
             try {
@@ -46,26 +50,28 @@ public class Controller implements KeyListener, Runnable
     }
 
     public void keyTyped(KeyEvent e) {
-        if(e.getKeyChar() == ' ') {
+        
+    }
+
+    public void keyPressed(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_UP) {
             if(!gameOver){
                 model.getDino().jump();
             }
         }
-        if(e.getKeyChar() == '0'){
+        if(e.getKeyCode() == KeyEvent.VK_DOWN){
             if(!gameOver){
                 model.getDino().cower();
             }
         }
-        if(e.getKeyChar() == '\n'){
+        if(e.getKeyCode() == KeyEvent.VK_ENTER){
             if (gameOver) {
                 gameOver = false;
                 model.reset();
+            }else if(!gamestarted){
+                startGame();
             }
         }
-    }
-
-    public void keyPressed(KeyEvent e) {
-        // System.out.println("keyPressed: "+e);
     }
 
     public void keyReleased(KeyEvent e) {
