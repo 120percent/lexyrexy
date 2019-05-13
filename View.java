@@ -43,7 +43,7 @@ public class View extends JComponent implements ModelListener
         model.getBackground().create(g);
         model.getDino().create(g);
         model.getObstacles().create(g);
-        
-        scoreLabel.setText("Score" + model.getScore());
+        model.getScore().create(g);
+        //scoreLabel.setText("Score" + model.getScore());
     }
 }

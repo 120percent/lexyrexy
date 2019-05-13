@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Score()
+comment1.params=
+comment1.target=void\ update()
+comment2.params=
+comment2.target=int\ getScore()
+comment3.params=
+comment3.target=void\ reset()
+comment4.params=g
+comment4.target=void\ create(java.awt.Graphics)
+comment5.params=
+comment5.target=void\ stop()
+numComments=6

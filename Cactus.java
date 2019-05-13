@@ -4,7 +4,7 @@ public class Cactus extends Obstacle
 { 
     public Cactus(){
         x = 1000;
-        y = 610;
+        y = 600;
         image = ResourceManager.getImage("obstacle_gros.png");
     }
     

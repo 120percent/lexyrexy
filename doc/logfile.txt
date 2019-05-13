@@ -1,0 +1,36 @@
+Class documentation
+<---- javadoc command: ---->
+/usr/lib/jvm/java-11-openjdk-amd64/bin/javadoc
+-author
+-version
+-nodeprecated
+-package
+-Xdoclint:none
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+11
+-classpath
+/usr/share/bluej/bluejcore.jar:/usr/share/bluej/junit-4.11.jar:/usr/share/bluej/hamcrest-core-1.3.jar:/usr/share/bluej/lang-stride.jar:/usr/share/java/javafx-base-11.jar:/usr/share/java/javafx-controls-11.jar:/usr/share/java/javafx-fxml-11.jar:/usr/share/java/javafx-graphics-11.jar:/usr/share/java/javafx-media-11.jar:/usr/share/java/javafx-properties-11.jar:/usr/share/java/javafx-swing-11.jar:/usr/share/java/javafx-web-11.jar:/home/daniel/Schreibtisch/lexyrexy-master
+-d
+/home/daniel/Schreibtisch/lexyrexy-master/doc
+-encoding
+UTF-8
+-charset
+UTF-8
+/home/daniel/Schreibtisch/lexyrexy-master/Score.java
+<---- end of javadoc command ---->
+Loading source file /home/daniel/Schreibtisch/lexyrexy-master/Score.java...
+Constructing Javadoc information...
+Standard Doclet version 11.0.2
+Building tree for all the packages and classes...
+Generating /home/daniel/Schreibtisch/lexyrexy-master/doc/Score.html...
+Generating /home/daniel/Schreibtisch/lexyrexy-master/doc/package-summary.html...
+Generating /home/daniel/Schreibtisch/lexyrexy-master/doc/constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating /home/daniel/Schreibtisch/lexyrexy-master/doc/allclasses.html...
+Generating /home/daniel/Schreibtisch/lexyrexy-master/doc/allclasses.html...
+Generating /home/daniel/Schreibtisch/lexyrexy-master/doc/index.html...
