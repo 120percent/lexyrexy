@@ -70,7 +70,7 @@ public class Model
         //System.out.println("check");
         Boolean collision = false;
         for(Obstacle o : getObstacles().getObstacles()){
-            collision = o.getDimension().intersects(getDino().getDimension());
+            collision = getDino().getDimension().intersects(o.getDimension());//o.getDimension().intersects(getDino().getDimension());
         }
         return collision;
     }

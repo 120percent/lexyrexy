@@ -41,8 +41,8 @@ public class View extends JComponent implements ModelListener
 
         // BACKGROUND IMAGE
         model.getBackground().create(g);
-        model.getDino().create(g);
         model.getObstacles().create(g);
+        model.getDino().create(g);
         model.getScore().create(g);
         //scoreLabel.setText("Score" + model.getScore());
     }
