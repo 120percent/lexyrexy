@@ -1,8 +1,9 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Bird()
+comment0.target=Bird
 comment1.params=
-comment1.target=void\ animation()
+comment1.target=Bird()
 comment2.params=
-comment2.target=java.awt.Rectangle\ getDimension()
-numComments=3
+comment2.target=void\ animation()
+comment3.params=
+comment3.target=java.awt.Rectangle\ getDimension()
+numComments=4
