@@ -7,6 +7,7 @@ public class Controller implements KeyListener, Runnable
     private View view;
     private Thread gp;
     private boolean gameOver = false;
+    private int score;
     public boolean gamestarted;
 
     public Controller(){
@@ -33,8 +34,10 @@ public class Controller implements KeyListener, Runnable
             if(gameOver){
                 model.stop();
                 model.getBackground().setImage("background_start.png");
+                score = 0;
             }else{
-                model.getObstacles().changeSpeed(model.getScore().getScore());
+                score++; 
+                model.getObstacles().changeSpeed(score);
             }
             model.render();
             try {

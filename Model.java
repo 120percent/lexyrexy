@@ -62,7 +62,7 @@ public class Model
     public void reset(){
         getScore().reset();
         getDino().reset();
-        getObstacles().reset();
+        getObstacles().reset(); 
         getBackground().reset();
     }
 
@@ -70,7 +70,7 @@ public class Model
         //System.out.println("check");
         Boolean collision = false;
         for(Obstacle o : getObstacles().getObstacles()){
-            collision = getDino().getDimension().intersects(o.getDimension());//o.getDimension().intersects(getDino().getDimension());
+            collision = o.getDimension().intersects(getDino().getDimension());
         }
         return collision;
     }
