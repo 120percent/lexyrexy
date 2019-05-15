@@ -69,7 +69,6 @@ public class Dino{
 
     public void die(){
         state = STILL;
-        y = bottom;
     }
 
     public void reset(){
