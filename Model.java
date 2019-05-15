@@ -32,10 +32,10 @@ public class Model
 
     public void update(){
         //System.out.println("update");
-        getScore().update();
+        getBackground().update();
         getObstacles().update();
         getDino().update();
-        getBackground().update();
+        getScore().update();
     }
 
     public void render(){
