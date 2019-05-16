@@ -16,7 +16,7 @@ public class Obstacles
         state = RUN;
         random = new Random();
         initializeObstacles();
-
+        
     }
 
     public void create(Graphics g){
@@ -28,18 +28,10 @@ public class Obstacles
     public void reset(){
         state = 2;
         speed = 30;
-        ArrayList<Obstacle> removeObstacles = new ArrayList<Obstacle>();        
         for(Obstacle o : obstacles){
-            o.changeX(-speed);
-            o.animation();
-            removeObstacles.add(o);
+            obstacles.remove(o);
         }
-        for(Obstacle o : removeObstacles){
-            if(o.getX() < 0){
-                obstacles.remove(o);
-                initializeObstacles();
-            }
-        }
+
     }
 
     public void update(){
