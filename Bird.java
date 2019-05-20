@@ -29,8 +29,8 @@ public class Bird extends Obstacle
         Rectangle obstaclerect = new Rectangle();
         obstaclerect.x = x;
         obstaclerect.y = y;
-        obstaclerect.width = 50;
-        obstaclerect.height = 30;
+        obstaclerect.width = 60;
+        obstaclerect.height = 40;
 
         return obstaclerect;
     }

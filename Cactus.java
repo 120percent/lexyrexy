@@ -12,7 +12,7 @@ public class Cactus extends Obstacle
         Rectangle obstaclerect = new Rectangle();
         obstaclerect.x = x;
         obstaclerect.y = y;
-        obstaclerect.width = 75;
+        obstaclerect.width = 85;
         obstaclerect.height = 75;
 
         return obstaclerect;

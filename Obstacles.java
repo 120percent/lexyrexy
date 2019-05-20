@@ -5,6 +5,7 @@ import java.util.Random;
 public class Obstacles
 {
     private ArrayList<Obstacle> obstacles;
+    private ArrayList<Obstacle> removeObstacles;
     private int state;
     private static final int STILL = 1, RUN = 2;
     private int speed;
@@ -12,6 +13,7 @@ public class Obstacles
 
     public Obstacles(){
         obstacles = new ArrayList<Obstacle>();
+        removeObstacles = new ArrayList<Obstacle>();
         speed = 30;
         state = RUN;
         random = new Random();
@@ -29,7 +31,10 @@ public class Obstacles
         state = 2;
         speed = 30;
         for(Obstacle o : obstacles){
-            obstacles.remove(o);
+            removeObstacles.add(o);
+        }
+        for(Obstacle o : removeObstacles){
+                obstacles.remove(o);
         }
 
     }
