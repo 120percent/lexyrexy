@@ -53,7 +53,7 @@ public class Score
         else{
             checkHighscore();
         }
-        System.out.println(run+"");
+        
     }
 
     public int getScore(){

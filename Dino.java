@@ -24,14 +24,14 @@ public class Dino{
 
     public Dino(){
         x = 200;
-        y = 520; //520
+        y = 525; //520
         high = 0;
         state = RUN;
         running = LEFT_FOOT;
         topReached = false;
         jumpFactor = 50;
-        top = 300;
-        bottom = 520;
+        top = 350;
+        bottom = 525;
         image = ResourceManager.getImage("dino_leftfoot.png");
     }
 
@@ -109,7 +109,14 @@ public class Dino{
             setImage("dino_dead.png");
         }
         if(state == COWER){
-            setImage("dinoDucken.png");
+            if (running == LEFT_FOOT){
+                setImage("dinoDuckenNeu1.png");
+                running = RIGHT_FOOT;
+            }else{
+                setImage("dinoDuckenNeu2.png");
+                running = LEFT_FOOT;
+            }
+            
             high = 20;
             cowerTick++;
             if(cowerTick > 9){

@@ -4,11 +4,12 @@ import java.awt.*;
 public class Background
 {
     private BufferedImage image;
-    
+    private int state;
     
     public Background()
     {
-        image = ResourceManager.getImage("background_start.png");
+        state = 1;
+        image = ResourceManager.getImage("hiGrNeueWolkenStart.png");
     }
 
     public BufferedImage getImage(){
@@ -24,9 +25,11 @@ public class Background
     }
     
     public void update(){
-        setImage("background.png");
+        if (state > 25){state = 1;}
+        setImage("hiGrNeueWolken2."+ state+".png");
+        state++;
     }
     
-    public void reset(){}
-    public void stop(){}
+    public void reset(){state = 1;setImage("hiGrNeueWolken2.1.png");}
+    public void stop(){setImage("hiGrNeueWolkenStart.png");}
 }

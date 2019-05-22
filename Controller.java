@@ -33,7 +33,6 @@ public class Controller implements KeyListener, Runnable
             gameOver = model.checkCollision();
             if(gameOver){
                 model.stop();
-                model.getBackground().setImage("background_start.png");
                 score = 0;
             }else{
                 score++; 
