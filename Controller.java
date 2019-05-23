@@ -30,17 +30,16 @@ public class Controller implements KeyListener, Runnable
 
         while(true) {
             model.update();
-            gameOver = model.checkCollision();
             if(gameOver){
                 model.stop();
-                score = 0;
             }else{
+                gameOver = model.checkCollision();
                 score++; 
-                model.getObstacles().changeSpeed(score);
+                model.getObstacles().changeSpeed(model.getScore().getScore());
             }
             model.render();
             try {
-                Thread.sleep(80);
+                Thread.sleep(90);
             } catch(InterruptedException e) {
                 e.printStackTrace();
             }

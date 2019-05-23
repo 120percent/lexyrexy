@@ -77,9 +77,13 @@ public class Model
 
     public void stop(){
         getBackground().stop();
+        
         getDino().die();
+        
         getObstacles().stop();
+        
         getScore().stop();
+        
     }
 
 }
