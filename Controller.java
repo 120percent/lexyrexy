@@ -10,6 +10,10 @@ public class Controller implements KeyListener, Runnable
     private int score;
     public boolean gamestarted;
 
+    public static void main(String Args[]){
+    Controller c = new Controller();    
+    }
+    
     public Controller(){
         model = new Model();
         view = new View(model);
