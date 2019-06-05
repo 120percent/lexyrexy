@@ -30,7 +30,7 @@ public class Bird extends Obstacle
         obstaclerect.x = x;
         obstaclerect.y = y;
         obstaclerect.width = 60;
-        obstaclerect.height = 40;
+        obstaclerect.height = 50;
 
         return obstaclerect;
     }

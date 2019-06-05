@@ -21,10 +21,14 @@ public class Dino{
 
     private int LEFT_FOOT = 1,
     RIGHT_FOOT = 2;
-
+    
+    /**
+     * Konstruktor.
+     * Setzt Standard-Werte fuer Dino-Objekt
+     */
     public Dino(){
         x = 200;
-        y = 525; //520
+        y = 525; //525
         high = 0;
         state = RUN;
         running = LEFT_FOOT;
@@ -34,7 +38,11 @@ public class Dino{
         bottom = 525;
         image = ResourceManager.getImage("dino_leftfoot.png");
     }
-
+   
+    /**
+     * Erzeugen eines Hitbox-Rechtecks; Setzen der korrekten Werte;
+     * @return Hitbox-Rechteck
+     */
     public Rectangle getDimension() {
         Rectangle dinorect = new Rectangle();
         dinorect.x = x; 
@@ -44,40 +52,69 @@ public class Dino{
 
         return dinorect;
     }
-
+    
+    /**
+     * Setzt das im Pfad angegebene Bild;
+     * @param i Pfadangabe als String
+     */
     public void setImage(String i){
         image = ResourceManager.getImage(i);
     }
-
+    
+    /**
+     * Veraendert y um Wert;
+     * @param deltay Veraenderung von y
+     */
     public void changeY(int deltay){
         y = y + deltay; 
     }
 
+    /**
+     * @param g Grafik-Objekt zum Zeichnen
+     */
     public void create(Graphics g){
         g.drawImage(image, x, y,200, 200, null);
     }
 
+    /**
+     *  Setzt den State auf JUMP; indirekte Initiation des Sprungs
+     */
     public void jump(){
         state = JUMP;
     }
-
+    
+    /**
+     * Sofern der Dino sich nicht im Sprung befindet; Setzt State auf COWER;
+     * indirekte Initiation des Duckens
+     */
     public void cower(){
         if(state != JUMP){
             state = COWER;   
         }
     }
 
+    /**
+     * Setzt die Hoehe des Dinos zurueck; Setzt den State auf STILL;
+     * indirekte Iniotiation des Stillstehens
+     */
     public void die(){
         y = bottom;
         state = STILL;
     }
 
+    /**
+     * Setzt alles noetige auf die Ausgangsstellung zurueck
+     */
     public void reset(){
         state = RUN;
         y = bottom;
         cowerTick = 0;
     }
-
+    
+    /**
+     * Aktualisiert den Dino je nach State, indem er sich befindet;
+     * Wechselt ggf. zwischen den moeglichen States
+     */
     public void update(){
         if(state == RUN){
             if(running == LEFT_FOOT){
@@ -117,7 +154,7 @@ public class Dino{
                 running = LEFT_FOOT;
             }
             
-            high = 20;
+            high = 30;
             cowerTick++;
             if(cowerTick > 9){
                 state = RUN;
