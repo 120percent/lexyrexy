@@ -1,16 +1,23 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Score()
+comment0.text=\r\n\ Erzeugt\ ein\ Scoreobjekt\ mit\ Score\ und\ Highscore\ gleich\ 0\r\n
 comment1.params=
 comment1.target=void\ update()
+comment1.text=\r\n\ Erh\u00F6ht\ den\ Score,\ wenn\ das\ Spiel\ l\u00E4uft,\ \u00FCberpr\u00FCft\ andernfalls\ ob\ der\ Highscore\ \u00FCberschritten\ wurde\r\n
 comment2.params=
 comment2.target=int\ getScore()
+comment2.text=\r\n\ Gibt\ den\ Wert\ von\ score\ zur\u00FCck\r\n\ @return\ score\ Score\r\n
 comment3.params=
 comment3.target=void\ checkHighscore()
+comment3.text=\r\n\ \u00DCberpr\u00FCft\ ob\ der\ Score\ h\u00F6her\ als\ Highscore\ ist\ und\ setzt\ in\ diesem\ Fall\ den\ Highscore\ auf\ den\ Wert\ von\ Score\r\n
 comment4.params=
 comment4.target=void\ reset()
+comment4.text=\r\n\ Setzt\ Score\ auf\ 0\ zur\u00FCck\ \r\n
 comment5.params=g
 comment5.target=void\ create(java.awt.Graphics)
+comment5.text=\r\n\ Zeichnet\ Score\ und\ Highscore\r\n\ \r\n\ @param\ g\ Graphicsobjekt\ zum\ zeichnen\r\n
 comment6.params=
 comment6.target=void\ stop()
+comment6.text=\r\n\ Setzt\ run\ auf\ false\ dadurch\ wird\ der\ Score\ durch\ update()\ nicht\ weiter\ erh\u00F6ht\ \r\n
 numComments=7
