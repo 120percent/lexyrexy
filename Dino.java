@@ -166,7 +166,6 @@ public class Dino{
                 cowerTick = 0;
             }
         }
-        System.out.println(high+"");
     }
 
 }
