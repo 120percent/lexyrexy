@@ -81,6 +81,8 @@ public class Dino{
      */
     public void jump(){
         state = JUMP;
+        high = 0;
+        cowerTick = 0;
     }
     
     /**
@@ -154,17 +156,17 @@ public class Dino{
                 running = LEFT_FOOT;
             }
             
-            high = 30;
+            if(cowerTick == 0)high = 30;
             cowerTick++;
             if(cowerTick > 9){
+                high = 0;
                 state = RUN;
                 running = LEFT_FOOT;
                 setImage("dino_leftfoot");;
-                high = 0;
                 cowerTick = 0;
             }
         }
-
+        System.out.println(high+"");
     }
 
 }

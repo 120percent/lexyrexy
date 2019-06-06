@@ -7,7 +7,6 @@ public class Controller implements KeyListener, Runnable
     private View view;
     private Thread gp;
     private boolean gameOver = false;
-    private int score;
     public boolean gamestarted;
 
     public static void main(String Args[]){
@@ -38,7 +37,6 @@ public class Controller implements KeyListener, Runnable
                 model.stop();
             }else{
                 gameOver = model.checkCollision();
-                score++; 
                 model.getObstacles().changeSpeed(model.getScore().getScore());
             }
             model.render();
