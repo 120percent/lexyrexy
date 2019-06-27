@@ -1,12 +1,20 @@
 import java.awt.Rectangle;
+import java.util.Random;
 
 public class Bird extends Obstacle
 {
     private int state;
+    private Random random;
     public Bird()
     {
+        random = new Random();
+        if(random.nextInt(2) == 1){
+                y = 570;
+            }else{
+                y = 500;
+            }
         x = 1000;
-        y = 500;
+        
         image = ResourceManager.getImage("vogel1.png");
         state = 1;
     }
